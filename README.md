@@ -1,6 +1,7 @@
 # Ketryx GitHub Action
 
 This GitHub Action reports builds and test results to [Ketryx](https://www.ketryx.com/) via the [build API](https://docs.ketryx.com/api/build-api).
+Regulated teams use Ketryx to build FDA-compliant software. Teams using Ketryx track and trace requirements, manual and automated tests, and risks across GitHub, Jira, and other connected systems. Ketryx supports Agile SAFe, Part 11, ISO 13485, IEC 62304, ISO 14971, and medical device QMS. 
 
 ## Usage
 
@@ -24,9 +25,11 @@ Also refer to the [documentation on workflow YAML syntax](https://help.github.co
     test-junit-path: test-results/*.xml
 ```
 
-Read [this documentation](https://docs.ketryx.com/manuals/man-06-test-management#id-3.4.-associating-automated-tests-with-configuration-items) for details on how to associate Cucumber and JUnit reports with Ketryx configuration items.
+Read [this documentation](https://docs.ketryx.com/manuals/man-06-test-management#id-3.4.-associating-automated-tests-with-configuration-items) for details on how to associate Cucumber and JUnit reports with Ketryx configuration items. Medical device and SaMD companies using Ketryx can also leverage testing frameworks such as Selenium, Jest, Pytest, and googletest and testing platforms such as TestRail, Tricentis, QTest, Xray Test Management, and Zephyr Test.
 
 ### Upload CycloneDX JSON files
+
+Ketryx's automated SBOM generation supports compliance with FDA guidance on medical device cybersecurity. Ketryx accepts SBOM formats including SPDX and CycloneDX.
 
 ```yaml
 - name: Report build to Ketryx
